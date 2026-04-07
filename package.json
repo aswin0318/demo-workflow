@@ -1,0 +1,8 @@
+{
+  "name": "demo-workflow-node-ci",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node test/sum.test.js"
+  }
+}
