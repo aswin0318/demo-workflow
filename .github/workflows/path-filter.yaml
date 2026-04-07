@@ -1,0 +1,15 @@
+name: "Path Filter"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "src path trigger"
+        run: echo "Triggered for src"
