@@ -1,4 +1,4 @@
-# Sample Java Codebase
+# Sample Java Codebase ---
 
 This repository contains a minimal Java application built with Maven.
 
