@@ -1,0 +1,54 @@
+name: java-ci
+
+on:
+  push:
+    branches:
+      - java
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout Code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show files after checkout
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Files in repo:"
+          ls -la
+
+      # 2️⃣ Setup Java
+      - name: Setup java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Verify Java installation
+        run: |
+          echo "Java version:"
+          java -version
+          echo "Maven version:"
+          mvn -version
+
+      # 3️⃣ Before Build (Check structure)
+      - name: Show project structure before build
+        run: |
+          echo "Project structure:"
+          ls -R
+
+      # 4️⃣ Build Artifact
+      - name: Create artifact
+        run: mvn clean install
+
+      # 5️⃣ After Build (Check target folder)
+      - name: Show files after build
+        run: |
+          echo "Files after build:"
+          ls -la
+          echo "Contents of target directory:"
+          ls -la target || echo "No target directory found"
