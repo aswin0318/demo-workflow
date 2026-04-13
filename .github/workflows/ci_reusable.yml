@@ -17,6 +17,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/chekout@v4
       - run: echo "called branch is ${{ inputs.branch }}"
       - run: echo "actor is ${{ inputs.actor }}" 
       - run: echo "repo is ${{ inputs.repo }}"
