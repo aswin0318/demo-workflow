@@ -1,0 +1,25 @@
+
+name: CI
+
+on:
+  push:
+    branches: [ "reusable-workflow-template" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ./.github/workflows/ci_reusable.yml
+        with:
+          branch: ${{ github.ref_name }}
+          actor: ${{ github.actor }}
+          repo: ${{ github.repository }}
+      
