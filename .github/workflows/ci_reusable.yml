@@ -24,4 +24,4 @@ jobs:
       - run: echo "called branch is ${{ inputs.branch }}"
       - run: echo "actor is ${{ inputs.actor }}" 
       - run: echo "repo is ${{ inputs.repo }}"
-      - run: echo "repo is ${{ inputs.commit_id }}"
+      - run: echo "commit_id is ${{ inputs.commit_id }}"
