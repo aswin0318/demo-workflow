@@ -1,0 +1,16 @@
+name: demo-rw
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/workflows/ci-reusable.yml
+        with:
+          branch: ${{ github.ref_name }}
+          actor: ${{ github.actor }}
+          repo: ${{ github.repository }}
+            
