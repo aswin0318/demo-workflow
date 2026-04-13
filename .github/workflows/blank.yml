@@ -3,7 +3,7 @@ name: CI
 
 on:
   push:
-    branches: [ "reusable-workflow-template" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
