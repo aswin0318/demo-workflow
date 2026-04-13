@@ -6,11 +6,11 @@ on:
 
 jobs:
   job1:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: aswin0318/demo-workflow/.github/workflows/ci-reusable.yml
-        with:
-          branch: ${{ github.ref_name }}
-          actor: ${{ github.actor }}
-          repo: ${{ github.repository }}
+    uses: aswin0318/demo-workflow/.github/workflows/ci-reusable.yml@main
+    with:
+      branch: ${{ github.ref_name }}
+      actor: ${{ github.actor }}
+      repo: ${{ github.repository }}
+
+    
             
