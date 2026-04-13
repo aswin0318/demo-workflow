@@ -6,7 +6,7 @@ on:
 
 jobs:
   job1:
-    uses: aswin0318/demo-workflow/.github/workflows/ci-reusable.yml@main
+    uses: aswin0318/demo-workflow/.github/workflows/ci-reusable.yml
     with:
       branch: ${{ github.ref_name }}
       actor: ${{ github.actor }}
