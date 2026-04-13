@@ -1,0 +1,22 @@
+name: CI reusable
+
+on:
+  workflow_call:
+    inputs:
+      branch:
+        required: true
+        type: string
+      actor:
+        required: true
+        type: string
+      repo:
+        required: true
+        type: string
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "called branch is ${{ inputs.branch }}"
+      - run: echo "actor is ${{ inputs.actor }}" 
+      - run: echo "repo is ${{ inputs.repo }}"
